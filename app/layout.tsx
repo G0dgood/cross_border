@@ -14,13 +14,11 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: ReactNode;
-  pageProps: any; // You can replace 'any' with a more specific type if needed
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-
       <body className={montserrat.className}>
         <ReduxProvider>
           {children}
