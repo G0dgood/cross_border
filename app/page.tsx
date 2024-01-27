@@ -1,95 +1,60 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import CallToAction from '@/components/CallToAction'
+import AboutUs from '@/components/AboutUs'
+import PracticeAdvice from '@/components/PracticeAdvice'
+import FeaturedProducts from '@/components/FeaturedProducts'
+import Bestseller from '@/components/Bestseller'
+import Funiture from '@/components/Funiture'
+import Product from '@/components/Product'
+import { useAppDispatch, useAppSelector } from '../store/useStore'
+import { useEffect } from 'react'
+import { productData, reset } from '../features/Product/productSlice'
+import { customId } from '@/data/data'
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
+  const dispatch = useAppDispatch();
+  const { data, isError, message, isLoading } = useAppSelector((state: any) => state.product);
+
+  // Error Handling Effect
+  useEffect(() => {
+    if (isError) {
+      // Display an error toast with the message and reset the state
+      toast.dismiss(); // Dismiss any existing toasts
+      toast.error(message, {
+        toastId: customId
+      });
+    }
+    setTimeout(() => {
+      dispatch(reset());
+    }, 3000);
+  }, [dispatch, isError, message]);
+  console.log('product', data)
+
+  useEffect(() => {
+    // @ts-ignore  
+    dispatch(productData(10));
+  }, [dispatch]);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <ToastContainer position="bottom-right" />
+      {/* Funiture */}
+      <Funiture />
+      {/* Bestseller */}
+      <Bestseller />
+      {/* Product Button */}
+      <Product />
+      {/* FeaturedProducts*/}
+      <FeaturedProducts />
+      {/* PracticeAdvice */}
+      <PracticeAdvice />
+      {/* AboutUs*/}
+      <AboutUs />
+      {/* CallToAction */}
+      <CallToAction />
+      {/* footer */}
     </main>
+
   )
 }

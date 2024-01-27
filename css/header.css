@@ -1,0 +1,108 @@
+	 .header_top_container1{
+			width: 100%;
+			height: 58px;
+			display: flex;  
+padding: 0px 195px;
+justify-content: space-between;
+align-items: center;
+flex-shrink: 0;
+background: var(--secondary-color-1);
+color: var(--accent-white);
+		}
+	 .header_top_container{
+			width: 100%;
+			height: 58px;
+			display: flex;  
+padding: 0px 24px;
+justify-content: space-between;
+align-items: center;
+flex-shrink: 0;
+background: var(--secondary-color-1);
+color: var(--accent-white);
+		}
+.header_bottom_container1{
+			width: 100%;
+			height: 58px;
+			display: flex;  
+padding: 0px 195px;
+justify-content: space-between;
+align-items: center;
+}
+.header_bottom_container{
+			width: 100%;
+			height: 58px;
+			display: flex;  
+padding: 0px 24px;
+justify-content: space-between;
+align-items: center;
+}
+		.header_top_container_sup_one{
+		display: flex; 
+		align-items: center;
+			gap: 20px;
+		}
+		.header_top_container_sup_two{
+		display: flex; 
+		align-items: center;
+			gap: 15px;
+		}
+		.header_image_container{
+					display: flex; 
+		align-items: center;
+				gap: 5px;
+		}
+.header_bottom_container-sub{
+		display: flex; 
+		align-items: center;
+				gap: 30px;
+}
+.header_bottom_container-sub-user{
+		display: flex; 
+		align-items: center;
+			gap: 6px;
+}
+.header_bottom_container-sub-user h6{
+	 	color: var(--primary-color);
+}
+.header_bottom_container-sub-icons{
+		display: flex; 
+		align-items: center;
+  gap: 15px;
+}
+.header_bottom_container-sub-span{
+		display: flex; 
+		align-items: center;
+		gap: 5px;
+}
+.header_bottom_container-sub-span h6{
+		font-weight: 200;
+		color: var(--primary-color);
+}
+		.icon_headers{
+			width: 14px;
+		}
+
+		.header_ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;  
+		gap: 21px;
+}
+
+  .header_ul a{ 
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.2px;
+color: var(--second-text-color, #737373);
+text-align: center;
+		}
+
+
+.header_nav{
+	display: flex;
+	align-items: center;
+ gap:119px;
+}
