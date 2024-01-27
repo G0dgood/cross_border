@@ -70,20 +70,19 @@ const Header = () => {
 							<li>
 								<Link href="/">Home</Link>
 							</li>
-							<li>
-								<Link href="#" className='link_a'> <span>Shop</span>  <ExpandMoreRoundedIcon /> </Link>
+							<li className='link_a'>  Shop   <ExpandMoreRoundedIcon />
 							</li>
 							<li>
-								<Link href="#">About</Link>
+								About
 							</li>
 							<li>
-								<Link href="#">Blog</Link>
+								Blog
 							</li>
 							<li>
-								<Link href="#">Contact</Link>
+								Contact
 							</li>
 							<li>
-								<Link href="#">Pages</Link>
+								Pages
 							</li>
 						</ul>
 					</nav>

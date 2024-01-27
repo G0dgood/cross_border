@@ -178,7 +178,7 @@ align-items: center;
 		gap: 21px;
 }
 
-  .header_ul a{ 
+  .header_ul li{ 
 font-size: 12px;
 font-style: normal;
 font-weight: 700;
