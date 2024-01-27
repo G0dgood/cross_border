@@ -1,8 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 import { ReactNode } from 'react';
 import ReduxProvider from './provider';
 import "react-toastify/dist/ReactToastify.css";
@@ -19,15 +17,13 @@ interface RootLayoutProps {
   pageProps: any; // You can replace 'any' with a more specific type if needed
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children, pageProps }) => {
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
 
       <body className={montserrat.className}>
         <ReduxProvider>
-          <Header {...pageProps} /> {/* Include the Header component */}
           {children}
-          <Footer {...pageProps} />
         </ReduxProvider>
       </body>
     </html >

@@ -11,7 +11,6 @@ const AboutUs = () => {
 			<div className='furniture_section_five_container'>
 				<div className='furniture_section_five_container_card1'>
 					<h3 className='furniture_section_five_title_h3'>What they say about us</h3>
-
 					<div className='furniture_section_five_title_image_container'>
 						<Image src={user1} className='furniture_section_five_title_image' alt='user1' />
 						<div className='furniture_section_five_title_image_star'>
@@ -31,7 +30,7 @@ const AboutUs = () => {
 				<div className='furniture_section_five_container_card2'>
 					{aboutdata.map(item => (
 						<div className='furniture_section_five_small_image' key={item.id}>
-							<Image src={item.image} alt="furniture3" />
+							<Image src={item.image} alt="furniture3" id='section_five_container_card2_img' />
 						</div>
 					))}
 				</div>

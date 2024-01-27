@@ -1,13 +1,4 @@
-import image1 from '../public/lamp.svg'
-import image2 from '../public/chair.svg'
-import image3 from '../public/plate.svg'
-import image4 from '../public/trall.svg'
-import image5 from '../public/cup.svg'
-import image6 from '../public/spoon.svg'
-import image7 from '../public/jug.svg'
-import image8 from '../public/cup.svg'
-import image9 from '../public/tea_cup.svg'
-import image10 from '../public/wall.svg'
+
 import icon1 from '../public/book-reader.svg'
 import icon2 from '../public/carbon_book.svg'
 import icon3 from '../public/arrow-growth.svg'
@@ -25,78 +16,7 @@ import brand4 from '../public/fa-brands-4.svg'
 import brand5 from '../public/fa-brands-5.svg'
 import brand6 from '../public/fa-brands-6.svg'
 
-const bestsellersData = [
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image1,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image2,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image3,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image4,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image5,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image6,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image7,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image8,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image9,
-  },
-  {
-    title: "Graphic Design",
-    department: "English Department",
-    priceOriginal: "$16.48",
-    priceDiscounted: "$6.48",
-    image: image10,
-  },
-];
+
 const bestsellericon = [
   {
     icon: icon1,
@@ -294,4 +214,4 @@ const brandData = [
 
 const customId = "custom-id-yes";
 
-export { bestsellersData, postData, aboutdata, bestsellericon, brandData, bestsellersDatas, customId };
+export { postData, aboutdata, bestsellericon, brandData, bestsellersDatas, customId };

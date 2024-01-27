@@ -6,7 +6,10 @@ import singleproduct3 from '../public/single-product-1-thumb-2.svg'
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 
-const ProductComponent = () => {
+const ProductComponent = ({ data }: any) => {
+
+
+
 
 	return (
 		<div className='product_cover_container_sub1'>
@@ -15,15 +18,13 @@ const ProductComponent = () => {
 					<ArrowBackIosNewRoundedIcon style={{ height: "45px", width: "40px" }} />
 					<ArrowForwardIosRoundedIcon style={{ height: "45px", width: "40px" }} />
 				</div>
-				<Image src={singleproduct1} alt={`brand`} />
+				<Image src={data?.thumbnail} alt={`brand`} width={100} height={100} className='product_cover_width' />
 			</div>
+
 			<div className='product_cover_container_sub1_mini_container'>
-				<div>
-					<Image src={singleproduct2} alt={`brand`} />
-				</div>
-				<div>
-					<Image src={singleproduct3} alt={`brand`} />
-				</div>
+				{data?.images?.map((item: any, i: any) => (
+					<Image src={item} alt={`brand`} key={i} width={100} height={75} />
+				))}
 			</div>
 		</div>
 	);

@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import img from '../public/table_chair.svg'
 
+const ProductDescription = ({ data }: any) => {
+	 
 
-const ProductDescription = () => {
-	return (
+	
+	return ( 
 		<section className='productpage_two'>
 			<div className='description_links_container'>
 				<div className='description_links_container_sub'>
@@ -15,18 +16,17 @@ const ProductDescription = () => {
 			</div>
 			<div className='description_container_jump'>
 				<div className='description_container_jump_sub1'>
-					<h3>the quick fox jumps over </h3>
-					<p>Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
-
-					<p className='description_container_jump_sub1_border'> Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
-
-					<p>Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+					<h3>{data?.brand} </h3>
+					<p>{data?.description}</p>
+					<p className='description_container_jump_sub1_border'>{data?.description}</p>
+					<p>{data?.description}</p>
 				</div>
 				<div className='description_container_jump_sub2' >
-					<Image src={img} alt="phone" className='container_jump_img' />
+					<Image src={data?.thumbnail} alt="phone" className='container_jump_img' width={100} height={100} />
 				</div>
 			</div>
 		</section>
+
 	)
 }
 

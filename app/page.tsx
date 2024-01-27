@@ -1,4 +1,5 @@
 'use client'
+import React, { useState } from 'react'
 import CallToAction from '@/components/CallToAction'
 import AboutUs from '@/components/AboutUs'
 import PracticeAdvice from '@/components/PracticeAdvice'
@@ -11,40 +12,46 @@ import { useEffect } from 'react'
 import { productData, reset } from '../features/Product/productSlice'
 import { customId } from '@/data/data'
 import { ToastContainer, toast } from "react-toastify";
+import Footer from '@/components/footer'
+import Header from '@/components/header'
 
 export default function Home() {
   const dispatch = useAppDispatch();
-  const { data, isError, message, isLoading } = useAppSelector((state: any) => state.product);
-
+  const { data, isError, message, loading } = useAppSelector((state: any) => state.product);
+  // Initialize state with an initial value of 10
+  const [counter, setCounter] = useState(10);
   // Error Handling Effect
   useEffect(() => {
     if (isError) {
-      // Display an error toast with the message and reset the state
-      toast.dismiss(); // Dismiss any existing toasts
-      toast.error(message, {
-        toastId: customId
-      });
+      // Display an error toast  
+      toast.dismiss(); // 
+      toast.error(message, { toastId: customId });
     }
     setTimeout(() => {
       dispatch(reset());
     }, 3000);
   }, [dispatch, isError, message]);
-  console.log('product', data)
+
 
   useEffect(() => {
+    const input = { limit: counter }
     // @ts-ignore  
-    dispatch(productData(10));
-  }, [dispatch]);
+    dispatch(productData(input));
+  }, [counter, dispatch]);
+
+
 
   return (
     <main>
+      {/* Header */}
+      <Header />
       <ToastContainer position="bottom-right" />
       {/* Funiture */}
       <Funiture />
       {/* Bestseller */}
-      <Bestseller />
+      <Bestseller data={data} />
       {/* Product Button */}
-      <Product />
+      <Product setCounter={setCounter} counter={counter} loading={loading} />
       {/* FeaturedProducts*/}
       <FeaturedProducts />
       {/* PracticeAdvice */}
@@ -54,7 +61,9 @@ export default function Home() {
       {/* CallToAction */}
       <CallToAction />
       {/* footer */}
+      <Footer />
     </main>
 
   )
 }
+

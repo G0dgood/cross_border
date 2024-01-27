@@ -18,8 +18,10 @@
   --danger-color:#E74040;
  --disabled-element-color: #8EC2F2;
  --light-gray-1:#FAFAFA;
- --muted-text-color:#BDBDBD;
- --border:#E8E8E8
+ --muted-text-color:#BDBDBD; 
+ --border:#E8E8E8;
+  --hover-color: #23a5f036; 
+  --active-color: #C0C0C0;
 }
 
 
@@ -44,4 +46,5 @@ button{
 @import url(../css/page.css); 
 @import url(../css/productpage.css); 
 @import url(../css/footer.css); 
+@import url(../css/cart.css); 
  
