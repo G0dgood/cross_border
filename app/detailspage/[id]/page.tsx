@@ -9,7 +9,6 @@ import { productData, productDetails, reset } from '@/features/Product/productSl
 import { customId } from '@/data/data';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Suspense } from 'react';
 import { useParams } from 'next/navigation';
 
 const Productpage = () => {
@@ -53,7 +52,7 @@ const Productpage = () => {
 
 
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<  >
 			{/* Header */}
 			<Header />
 			<ToastContainer position="bottom-right" />
@@ -65,7 +64,7 @@ const Productpage = () => {
 			<DetailsBestseller productdata={productdata} />
 			{/* footer */}
 			<Footer />
-		</Suspense>
+		</>
 	)
 }
 
