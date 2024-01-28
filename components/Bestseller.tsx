@@ -12,10 +12,7 @@ const Bestseller = ({ data }: any) => {
 	const BestsellerComponent = ({ data }: any) => (
 		<div className='bestseller_products_container'>
 			{data?.products?.map((item: any, index: any) => (
-				<Link key={index} className='bestseller_item' href={{
-					pathname: '/detailspage',
-					query: { search: item?.id }
-				}}>
+				<Link key={index} className='bestseller_item' href={`/detailspage/${item?.id}`}>
 					<div className='bestseller_products_img'>
 						<Image src={item?.thumbnail} alt={`Product ${index + 1}`} width={183} height={238} />
 					</div>
