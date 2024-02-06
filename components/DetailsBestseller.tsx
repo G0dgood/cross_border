@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import { bestsellersDatas, brandData } from '@/data/data';
+import { brandData } from '@/data/data';
 import facebook from '../public/ant-design_facebook-filled.svg'
 import ig from '../public/ant-design_instagram-outlined.svg'
 import x from '../public/ant-design_twitter-outlined.svg'

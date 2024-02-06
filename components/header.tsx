@@ -35,8 +35,24 @@ const Header = () => {
 	const pathname = usePathname()
 	const [cartitem, setCartitem] = useState(false)
 	const [wish, setWish] = useState(false)
-
-
+	const navLinks = [
+		{ path: '/', label: 'Home' },
+		{ path: '/about', label: 'Product' },
+		{ path: '/about', label: 'Shop' },
+		{ path: '/contact', label: 'About' },
+		{ path: '/contact', label: 'Pricing' },
+		{ path: '/contact', label: 'Blog' },
+		{ path: '/contact', label: 'Contact' },
+		{ path: '/contact', label: 'Pages' },
+	];
+	const navLink2 = [
+		{ path: '/', label: 'Home' },
+		{ path: '/shop', label: 'Shop', hasDropdown: true },
+		{ path: '/about', label: 'About' },
+		{ path: '/blog', label: 'Blog' },
+		{ path: '/contact', label: 'Contact' },
+		{ path: '/pages', label: 'Pages' },
+	];
 	return (
 		<header>
 			{/* Top header nav */}
@@ -65,25 +81,19 @@ const Header = () => {
 			<div className={pathname === "/detailspage" ? "header_bottom_container1" : "header_bottom_container"}>
 				<div className='header_nav'>
 					<h3>Bandage</h3>
-					<nav >
+					<nav>
 						<ul className='header_ul'>
-							<li>
-								<Link href="/">Home</Link>
-							</li>
-							<li className='link_a'>  Shop   <ExpandMoreRoundedIcon />
-							</li>
-							<li>
-								About
-							</li>
-							<li>
-								Blog
-							</li>
-							<li>
-								Contact
-							</li>
-							<li>
-								Pages
-							</li>
+							{navLink2.map(({ path, label, hasDropdown }, index) => (
+								<li key={index} className={hasDropdown ? 'link_a' : ''}>
+									{hasDropdown ? (
+										<>
+											{label} <ExpandMoreRoundedIcon />
+										</>
+									) : (
+										<Link href={path}>{label}</Link>
+									)}
+								</li>
+							))}
 						</ul>
 					</nav>
 				</div>
@@ -120,31 +130,13 @@ const Header = () => {
 						<div ><Image src={menuicn} alt="menu" /> </div>
 					</div>
 				</div>
+
 				<div className='header_small_nav_links'>
-					<li className={pathname === "/detailspage" ? "addcolor" : ""}>
-						<Link href="/">Home</Link>
-					</li>
-					<li className={pathname === "/" ? "removecolor" : pathname === "/detailspage" ? "remove" : ""}>
-						<Link href="/about">Product</Link>
-					</li>
-					<li className={pathname === "/" ? "remove" : ""}>
-						<Link href="/about">Shop</Link>
-					</li>
-					<li className={pathname === "/" ? "remove" : ""}>
-						<Link href="/contact">About</Link>
-					</li>
-					<li className={pathname === "/detailspage" ? "remove" : ""}>
-						<Link href="/contact">Pricing</Link>
-					</li>
-					<li className={pathname === "/" ? "remove" : ""}>
-						<Link href="/contact">Blog</Link>
-					</li>
-					<li>
-						<Link href="/contact">Contact</Link>
-					</li>
-					<li className={pathname === "/" ? "remove" : ""}>
-						<Link href="/contact">Pages</Link>
-					</li>
+					{navLinks.map(({ path, label }: any, index: React.Key | null | undefined) => (
+						<li key={index} className={pathname === path ? 'addcolor' : pathname === '/detailspage' ? 'remove' : ''}>
+							<Link href={path}>{label}</Link>
+						</li>
+					))}
 				</div>
 				<div className='header_small_nav_sub'>
 					<div >

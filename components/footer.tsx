@@ -43,7 +43,7 @@ const footer = () => {
 			</div>
 			<div className='furniture_section_seven_buttom_text'>
 				<h6>
-					Made With Love By Finland All Right Reserved
+					Made With Love By Godwin Chinedu @ chinedu.go@gmail.com All Right Reserved
 				</h6>
 			</div>
 		</footer>

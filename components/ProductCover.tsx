@@ -8,7 +8,7 @@ import Image from 'next/image'
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '@/features/Cart/cartSlice';
 import { toast } from 'react-toastify'
 import { addToWishList } from '@/features/WishList/wishSlice';

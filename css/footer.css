@@ -10,8 +10,7 @@ background-color: var(--accent-white);
 		flex-direction: column;
 gap: 10px;
 }
-.furniture_section_seven_link_container_second{
-
+.furniture_section_seven_link_container_second{ 
 	padding:   50px  195px; 
 	display: flex; 
 flex-direction: row;
