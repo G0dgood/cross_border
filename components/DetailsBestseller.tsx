@@ -4,25 +4,30 @@ import { brandData } from '@/data/data';
 import facebook from '../public/ant-design_facebook-filled.svg'
 import ig from '../public/ant-design_instagram-outlined.svg'
 import x from '../public/ant-design_twitter-outlined.svg'
+import { imageMapping } from '@/data/data';
+
+
 
 const DetailsBestseller = ({ productdata }: any) => {
 
-	const { products } = productdata
+
 
 
 	const BestsellerComponent = ({ data }: any) => (
 		<div className='bestseller_products_container2'>
-			{data?.map((item: any, index: any) => (
+			{productdata?.map((item: any, index: any) => (
 				<div key={index} className='bestseller_item2'   >
 					<div className='bestseller_products_img2'>
-						<Image src={item?.thumbnail} alt={`Product ${index + 1}`} className='Product_products_img2' width={100} height={100} />
+						<Image
+							src={imageMapping[item?.image as keyof typeof imageMapping] || item?.image}
+							alt={item?.name} width={100} height={100} className='Product_products_img2' />
 					</div>
 					<div className='bestseller_text_container2'>
 						<h5 className='bestseller_card_title_1'>{item?.title}</h5>
 						<a href="#" className='bestseller_card_title_2'>{item?.category}</a>
 						<div className='bestseller_card_title_3'>
 							<span className='bestseller_card_title_2_sub1'>${item?.price}</span>
-							<span className='bestseller_card_title_2_sub2'>${item?.discountPercentage}</span>
+							<span className='bestseller_card_title_2_sub2'>${item?.discount}</span>
 						</div>
 					</div>
 				</div>
@@ -36,7 +41,7 @@ const DetailsBestseller = ({ productdata }: any) => {
 				<div className='productpage_three_title_container'>
 					<h3>BESTSELLER PRODUCTS</h3>
 					{/* BestsellerComponent */}
-					<BestsellerComponent data={products} />
+					<BestsellerComponent data={productdata} />
 				</div>
 
 				<div className='productpage_three_brand_container'>

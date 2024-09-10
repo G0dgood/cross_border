@@ -1,5 +1,5 @@
  
-    export const baseUrl: any = "https://dummyjson.com"; 
+    export const baseUrl: any = "https://fake-store-api.mock.beeceptor.com"; 
 
 
 export const buildDynamicURL = (id: any,   limit: any, page: any, base: any) => {

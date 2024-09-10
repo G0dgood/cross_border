@@ -11,6 +11,7 @@ import {
 	incrementQuantity as incrementQuantityAction,
 	removeFromCart as removeFromCartAction,
 } from '@/features/Cart/cartSlice';
+import { imageMapping } from '@/data/data';
 
 const ShoppingCart = () => {
 	const dispatch = useDispatch();
@@ -58,7 +59,9 @@ const ShoppingCart = () => {
 					</div>
 
 					<div className="image">
-						<Image src={item.images[0]} alt={item.title} width={100} height={100} />
+						<Image
+							src={imageMapping[item?.image as keyof typeof imageMapping] || item?.image}
+							alt={item?.name} width={100} height={100} />
 					</div>
 
 					<div className="description">

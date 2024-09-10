@@ -39,17 +39,16 @@ const ProductCover = ({ data }: any) => {
 				{/* Product Component */}
 				<ProductComponent data={data} />
 				<div className='product_cover_container_sub2'>
-					<h4 className='product_cover_container_sub2_h41'>Floating Phone</h4>
+					<h4 className='product_cover_container_sub2_h41'>{data?.name}</h4>
 					<span className='product_staricon_container'>
-						<StarIcon style={{ color: '#F3CC03' }} />
-						<StarIcon style={{ color: '#F3CC03' }} />
-						<StarIcon style={{ color: '#F3CC03' }} />
-						<StarIcon style={{ color: '#F3CC03' }} />
-						<StarIcon style={{ color: '#F3CC03' }} />
-						<StarBorderIcon style={{ color: '#F3CC03' }} />
-						<h6 >10 Reviews</h6>
+						{[...Array(5)].map((_, index) => (
+							index < Math?.floor(data?.rating)
+								? <StarIcon key={index} style={{ color: '#F3CC03' }} />
+								: <StarBorderIcon key={index} style={{ color: '#F3CC03' }} />
+						))}
+						<h6 >{data?.reviews?.length} Reviews</h6>
 					</span>
-					<h3 className='product_staricon_amount'>$1,139.33</h3>
+					<h3 className='product_staricon_amount'>${data?.price}</h3>
 					<div className='product_availability_stock'>
 						<h6 className='product_availability_stock_h61'> Availability  :</h6>
 						<h6 className='product_availability_stock_h62'>In Stock</h6>

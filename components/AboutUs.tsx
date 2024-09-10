@@ -21,7 +21,8 @@ const AboutUs = () => {
 							<StarIcon />
 							<StarBorderIcon />
 						</div>
-						<h6 className='furniture_section_five_title_image_h6'>Slate helps you see how many more days you need to work to
+						<h6 className='furniture_section_five_title_image_h6'>
+							Slate helps you see how many more days you need to work to
 							reach your financial goal.</h6>
 						<a href='#' className='furniture_section_five_title_image_a'>Regina Miles</a>
 						<h6 className='furniture_section_five_title_image_a_h6'>Designer</h6>

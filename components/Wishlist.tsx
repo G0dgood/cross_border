@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import { removeFromWishList } from '../features/WishList/wishSlice';
-
+import { imageMapping } from '@/data/data';
 
 const Wishlist = () => {
 	const dispatch = useDispatch();
@@ -29,13 +29,15 @@ const Wishlist = () => {
 					<p className='cart-icon-p'>Your wish list is empty</p>
 				</div>
 			) : (
-				wishListItems.map((item: any) => (
+				wishListItems?.map((item: any) => (
 					<div className="item" key={item.id}>
 						<div className="buttons">
 							<ClearRoundedIcon className="delete-btn" onClick={() => handleRemoveFromWishList(item)} />
 						</div>
 						<div className="image">
-							<Image src={item.images[0]} alt={item.title} width={100} height={100} />
+							<Image
+								src={imageMapping[item?.image as keyof typeof imageMapping] || item?.image}
+								alt={item?.name} width={100} height={100} />
 						</div>
 						<div className="description">
 							<span>{item.title}</span>

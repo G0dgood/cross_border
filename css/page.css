@@ -190,7 +190,7 @@ gap: 10px;
 
 .bestseller_card_title_2_sub1{
 	color: var(--muted-color, #BDBDBD); 
-font-size: 16px;
+font-size: 12px;
 font-style: normal;
 font-weight: 700;
 line-height: 24px; 
@@ -200,7 +200,7 @@ letter-spacing: 0.1px;
  
 .bestseller_card_title_2_sub2{
 	color: var(--secondary-color-1, #23856D);
-font-size: 16px;
+font-size: 12px;
 font-style: normal;
 font-weight: 700;
 line-height: 24px; 

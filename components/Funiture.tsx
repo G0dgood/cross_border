@@ -4,7 +4,7 @@ import furniture1 from '../public/furniture1.svg'
 import furniture2 from '../public/furniture2.svg'
 import furniture3 from '../public/furniture3.svg'
 import furniture4 from '../public/furniture4.svg'
-
+import Carousel from 'react-bootstrap/Carousel';
 
 
 const Funiture = () => {
@@ -25,21 +25,58 @@ const Funiture = () => {
 					</div>
 					<Image src={furniture1} alt="furniture1" className='furniture_img' />
 				</div>
+
 				<div className='funiture_section_card_two'>
-					<div className='funiture_section_card_two_sub1'>
-						<div className='funiture_section_card_text_sup'>
-							<h6 className='funiture_section_card_text_sup_h6'>
-								5 Items
-							</h6>
-							<h2 className='funiture_section_card_text_sup_h2_2'>
-								FURNITURE
-							</h2>
-							<h6 className='funiture_section_card_text_sup_h62'>
-								Read More
-							</h6>
-						</div>
-						<Image src={furniture2} alt="furniture2" className='furniture_img' />
-					</div>
+					<Carousel>
+						<Carousel.Item>
+							<div className='funiture_section_card_two_sub1'>
+								<div className='funiture_section_card_text_sup'>
+									<h6 className='funiture_section_card_text_sup_h6'>
+										5 Items
+									</h6>
+									<h2 className='funiture_section_card_text_sup_h2_2'>
+										FURNITURE
+									</h2>
+									<h6 className='funiture_section_card_text_sup_h62'>
+										Read More
+									</h6>
+								</div>
+								<Image src={furniture2} alt="furniture2" className='furniture_img' />
+							</div>
+						</Carousel.Item>
+						<Carousel.Item>
+							<div className='funiture_section_card_two_sub1'>
+								<div className='funiture_section_card_text_sup'>
+									<h6 className='funiture_section_card_text_sup_h6'>
+										5 Items
+									</h6>
+									<h2 className='funiture_section_card_text_sup_h2_2'>
+										FURNITURE
+									</h2>
+									<h6 className='funiture_section_card_text_sup_h62'>
+										Read More
+									</h6>
+								</div>
+								<Image src={furniture2} alt="furniture2" className='furniture_img' />
+							</div>
+						</Carousel.Item>
+						<Carousel.Item>
+							<div className='funiture_section_card_two_sub1'>
+								<div className='funiture_section_card_text_sup'>
+									<h6 className='funiture_section_card_text_sup_h6'>
+										5 Items
+									</h6>
+									<h2 className='funiture_section_card_text_sup_h2_2'>
+										FURNITURE
+									</h2>
+									<h6 className='funiture_section_card_text_sup_h62'>
+										Read More
+									</h6>
+								</div>
+								<Image src={furniture2} alt="furniture2" className='furniture_img' />
+							</div>
+						</Carousel.Item>
+					</Carousel>
 					<div className='funiture_section_card_two_sub2'>
 						<div className='funiture_section_card_two_inner1'>
 							<div className='funiture_section_card_text_sup'>

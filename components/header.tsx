@@ -24,6 +24,7 @@ import ShoppingCart from './ShoppingCart';
 import { useSelector } from 'react-redux';
 import Wishlist from './Wishlist';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import { navLink2, navLinks, navLinks1 } from '@/data/data';
 
 const Header = () => {
 	const cartItems = useSelector((state: any) => state.cart.items);
@@ -35,24 +36,7 @@ const Header = () => {
 	const pathname = usePathname()
 	const [cartitem, setCartitem] = useState(false)
 	const [wish, setWish] = useState(false)
-	const navLinks = [
-		{ path: '/', label: 'Home' },
-		{ path: '/about', label: 'Product' },
-		{ path: '/about', label: 'Shop' },
-		{ path: '/contact', label: 'About' },
-		{ path: '/contact', label: 'Pricing' },
-		{ path: '/contact', label: 'Blog' },
-		{ path: '/contact', label: 'Contact' },
-		{ path: '/contact', label: 'Pages' },
-	];
-	const navLink2 = [
-		{ path: '/', label: 'Home' },
-		{ path: '/shop', label: 'Shop', hasDropdown: true },
-		{ path: '/about', label: 'About' },
-		{ path: '/blog', label: 'Blog' },
-		{ path: '/contact', label: 'Contact' },
-		{ path: '/pages', label: 'Pages' },
-	];
+
 	return (
 		<header>
 			{/* Top header nav */}
@@ -133,6 +117,13 @@ const Header = () => {
 
 				<div className='header_small_nav_links'>
 					{navLinks.map(({ path, label }: any, index: React.Key | null | undefined) => (
+						<li key={index} className={pathname === path ? 'addcolor' : pathname === '/detailspage' ? 'remove' : ''}>
+							<Link href={path}>{label}</Link>
+						</li>
+					))}
+				</div>
+				<div className='header_small_nav_links1'>
+					{navLinks1.map(({ path, label }: any, index: React.Key | null | undefined) => (
 						<li key={index} className={pathname === path ? 'addcolor' : pathname === '/detailspage' ? 'remove' : ''}>
 							<Link href={path}>{label}</Link>
 						</li>

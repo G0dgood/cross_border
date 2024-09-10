@@ -5,7 +5,7 @@ import ProductDescription from '@/components/ProductDescription';
 import DetailsBestseller from '@/components/DetailsBestseller';
 import { useAppDispatch, useAppSelector } from '@/store/useStore';
 import { ToastContainer, toast } from "react-toastify";
-import { productData, productDetails, reset } from '@/features/Product/productSlice';
+import { productData, reset } from '@/features/Product/productSlice';
 import { customId } from '@/data/data';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -16,25 +16,19 @@ const Productpage = () => {
 
 	const dispatch = useAppDispatch();
 	const { data, isError, message } = useAppSelector((state: any) => state.product);
-	const { productdata, productisError, productmessage } = useAppSelector((state: any) => state.product);
-
 	const { id } = useParams();
-
-
+	const product = data.find((prod: { product_id: number; }) => prod.product_id === Number(id));
 
 
 	// Error Handling Effect
 	useEffect(() => {
 		if (isError) {
 			toast.error(message, { toastId: customId });
-		} else if (productisError) {
-			toast.dismiss();
-			toast.error(productmessage, { toastId: customId });
 		}
 		setTimeout(() => {
 			dispatch(reset());
 		}, 3000);
-	}, [dispatch, isError, message, productisError, productmessage]);
+	}, [dispatch, isError, message]);
 
 
 	useEffect(() => {
@@ -43,11 +37,6 @@ const Productpage = () => {
 		dispatch(productData(input));
 	}, [dispatch, id]);
 
-	useEffect(() => {
-		const input = { limit: undefined }
-		// @ts-ignore  
-		dispatch(productDetails(input));
-	}, [dispatch]);
 
 
 
@@ -57,11 +46,11 @@ const Productpage = () => {
 			<Header />
 			<ToastContainer position="bottom-right" />
 			{/* ProductCover */}
-			<ProductCover data={data} />
+			<ProductCover data={product} />
 			{/* ProductDescription */}
-			<ProductDescription data={data} />
+			<ProductDescription data={product} />
 			{/* DetailsBestseller */}
-			<DetailsBestseller productdata={productdata} />
+			<DetailsBestseller productdata={data} />
 			{/* footer */}
 			<Footer />
 		</>

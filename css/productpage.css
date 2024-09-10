@@ -398,6 +398,10 @@ padding: 60px 0px;
 
 @media (max-width: 1080px) {
 
+	.furniture_section_seven_link_container{
+		width: 100%;
+	}
+
 	.furniture_section_six_container_sub_main2 {
     background-color: var(--accent-white);
     padding: 0px 50px 0px 50px;

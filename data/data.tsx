@@ -1,4 +1,3 @@
-
 import icon1 from '../public/book-reader.svg'
 import icon2 from '../public/carbon_book.svg'
 import icon3 from '../public/arrow-growth.svg'
@@ -15,6 +14,31 @@ import brand3 from '../public/fa-brands-3.svg'
 import brand4 from '../public/fa-brands-4.svg'
 import brand5 from '../public/fa-brands-5.svg'
 import brand6 from '../public/fa-brands-6.svg'
+
+import smartphone from '../public/images/smartphone.jpg'
+import laptop from '../public/images/laptop.jpg'
+import headphones from '../public/images/headphones.jpg'
+import smartwatch from '../public/images/smartwatch.jpg'
+import camera from '../public/images/camera.jpg'
+import tv from '../public/images/tv.jpg'
+import tablet from '../public/images/tablet.jpg'
+import console from '../public/images/console.jpg'
+import refrigerator from '../public/images/refrigerator.jpg'
+
+
+
+const imageMapping = {
+  "https://example.com/images/smartphone.jpg": smartphone,
+  "https://example.com/images/laptop.jpg": laptop,
+  "https://example.com/images/headphones.jpg": headphones,
+  "https://example.com/images/smartwatch.jpg": smartwatch,
+  "https://example.com/images/camera.jpg": camera,
+  "https://example.com/images/tv.jpg": tv,
+  "https://example.com/images/tablet.jpg": tablet,
+  "https://example.com/images/console.jpg": console,
+  "https://example.com/images/refrigerator.jpg": refrigerator
+};
+
 
 
 const bestsellericon = [
@@ -212,6 +236,53 @@ const brandData = [
   }
 ]
 
+const footerSections = [
+  {
+    title: 'Company Info',
+    links: ['About Us', 'Carrier', 'We are hiring', 'Blog'],
+  },
+  {
+    title: 'Legal',
+    links: ['About Us', 'Carrier', 'We are hiring', 'Blog'],
+  },
+  {
+    title: 'Features',
+    links: ['Business Marketing', 'User Analytic', 'Live Chat', 'Unlimited Support'],
+  },
+  {
+    title: 'Resources',
+    links: ['IOS & Android', 'Watch a Demo', 'Customers', 'API'],
+  },
+  {
+    title: 'Get In Touch',
+    customComponent: true,
+  },
+];
+
+const navLinks = [
+  { path: '/', label: 'Home' },
+  { path: '/about', label: 'Product' },
+  { path: '/about', label: 'Shop' },
+  { path: '/contact', label: 'About' },
+  { path: '/contact', label: 'Pricing' },
+  { path: '/contact', label: 'Blog' },
+  { path: '/contact', label: 'Contact' },
+  { path: '/contact', label: 'Pages' },
+];
+const navLinks1 = [
+  { path: '/', label: 'Home' },
+];
+const navLink2 = [
+  { path: '/', label: 'Home' },
+  { path: '/shop', label: 'Shop', hasDropdown: true },
+  { path: '/about', label: 'About' },
+  { path: '/blog', label: 'Blog' },
+  { path: '/contact', label: 'Contact' },
+  { path: '/pages', label: 'Pages' },
+];
+
 const customId = "custom-id-yes";
 
-export { postData, aboutdata, bestsellericon, brandData, bestsellersDatas, customId };
+
+
+export { postData, aboutdata, bestsellericon, brandData, bestsellersDatas, customId, footerSections, imageMapping, navLinks, navLinks1, navLink2 };

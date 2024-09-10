@@ -1,7 +1,8 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { imageMapping } from '@/data/data';
 
 
 const Bestseller = ({ data }: any) => {
@@ -11,23 +12,28 @@ const Bestseller = ({ data }: any) => {
 
 	const BestsellerComponent = ({ data }: any) => (
 		<div className='bestseller_products_container'>
-			{data?.products?.map((item: any, index: any) => (
-				<Link key={index} className='bestseller_item' href={`/detailspage/${item?.id}`}>
+			{data?.map((item: any, index: any) => (
+				<Link key={index} className='bestseller_item' href={`/detailspage/${item?.product_id}`}>
 					<div className='bestseller_products_img'>
-						<Image src={item?.thumbnail} alt={`Product ${index + 1}`} width={183} height={238} />
+						{/* Check if there's a mapped image and use it, otherwise fallback to original */}
+						<Image
+							src={imageMapping[item.image as keyof typeof imageMapping] || item.image}
+							alt={`Product ${index + 1}`}
+							width={183}
+							height={238}
+						/>
 					</div>
 					<div className='bestseller_text_container'>
-						<h5 className='bestseller_card_title_1'>{item?.brand}</h5>
+						<h5 className='bestseller_card_title_1'>{item?.name}</h5>
 						<span className='bestseller_card_title_2'>{item?.category}</span>
 						<div className='bestseller_card_title_3'>
 							<span className='bestseller_card_title_2_sub1'>${item?.price}</span>
-							<span className='bestseller_card_title_2_sub2'>${item?.discountPercentage}</span>
+							<span className='bestseller_card_title_2_sub2'>{item?.discount}% off</span>
 						</div>
 					</div>
 				</Link>
-			))
-			}
-		</div >
+			))}
+		</div>
 	);
 
 	return (
